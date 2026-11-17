@@ -1,4 +1,3 @@
-
 package br.edu.pos.apiprodutos;
 
 import br.edu.pos.apiprodutos.config.Database;
@@ -6,22 +5,17 @@ import br.edu.pos.apiprodutos.controller.ProdutoController;
 import br.edu.pos.apiprodutos.repository.ProdutoRepository;
 import br.edu.pos.apiprodutos.repository.ProdutoRepositoryJDBC;
 import br.edu.pos.apiprodutos.service.ProdutoService;
-
 import io.javalin.Javalin;
 import io.javalin.openapi.plugin.OpenApiPlugin;
 import io.javalin.openapi.plugin.swagger.SwaggerPlugin;
-
 import org.h2.tools.Server;
-
 import java.sql.SQLException;
 
 public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-
         Database.inicializar();
-
 
         Server h2Console = Server.createWebServer(
                 "-webPort", "8082"

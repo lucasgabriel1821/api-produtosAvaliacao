@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProdutoRepository {
-
     void salvar(Produto produto);
 
     List<Produto> listarTodos();
@@ -13,4 +12,10 @@ public interface ProdutoRepository {
     Optional<Produto> buscarPorId(Long id);
 
     void excluir(Long id);
+
+    boolean adicionarEstoque(Long id, int quantidade);
+
+    boolean retirarEstoque(Long id, int quantidade);
+
+    List<Produto> listarComEstoqueAbaixoOuIgual(int limite);
 }
